@@ -32,10 +32,16 @@ namespace EchoServerSocket
             using (StreamReader sr = new StreamReader(socket.GetStream()))
             using (StreamWriter sw = new StreamWriter(socket.GetStream()))
             {
-                string str = sr.ReadLine();
-                sw.WriteLine(str);
+                sw.WriteLine(CalculateWords(sr.ReadLine()));
                 sw.Flush(); // Dette sikrer at writeren ikke buffer i hukommelsen, men sender ud konstant
             }
+        }
+
+        private int CalculateWords(string input)
+        {
+            if (string.IsNullOrWhiteSpace(input))return 0;
+            
+            return input.Split(" ").Length;
         }
     }
 }
