@@ -5,4 +5,10 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="CalcDLL3Sem">
+      <HintPath>..\..\CalcDLL3Sem\CalcDLL3Sem\bin\Release\netcoreapp2.1\CalcDLL3Sem.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
